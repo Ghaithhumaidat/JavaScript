@@ -77,7 +77,7 @@
 
             function reSize(){
                 const para = document.getElementById("TA");
-                const Size = document.getElementById("size").text;
+                const Size = document.getElementById("size").value;
                 alert(Size)
                 para.style.fontSize = Size;
 
@@ -85,17 +85,20 @@
 
             function Italic(){
                 const para = document.getElementById("TA");
-                para.style.fontStyle = "italic";
+                const chick = document.getElementById("CB");
+                para.style.fontStyle = chick.checked ? "italic" : "normal" ;
                 }
 
             function Bold(){
                 const para = document.getElementById("TA");
-                para.style.fontWeight = "bold";
+                const chick = document.getElementById("B");
+                para.style.fontWeight = chick.checked ? "bold" : "normal" ;
                 }
 
             function Underline(){
                 const para = document.getElementById("TA");
-                para.style.textDecoration = "underline";
+                const chick = document.getElementById("UL");
+                para.style.textDecoration = chick.checked ? "underline" : "none" ;
                 }
 
         </script>
