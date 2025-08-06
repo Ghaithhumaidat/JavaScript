@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .BMW{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 200px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: yellow;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="BMW" class="BMW" onmouseover="inbox()" onmouseout="outbox()">
+
+        <h1>Hallo World</h1>
+
+    </div>
+
+    <script>
+
+        function inbox(){
+
+            const text = document.getElementById("BMW")
+            text.innerHTML = "<h1>Hallo World</h1>"
+            text.style.background = "yellow"
+            text.style.color ="black"
+
+        }
+
+        function outbox(){
+
+            const text = document.getElementById("BMW")
+            text .innerHTML = "<h1>Can i help you ?</h1>"
+            text.style.background = "yellow"
+            text.style.color ="black"
+
+        }
+
+    </script>
+
+</body>
+</html>
