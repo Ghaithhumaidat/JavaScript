@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Michroma&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    </head>
+
+<style>
+
+   .class{
+
+    font-weight: bold;
+    text-decoration: underline;
+
+   }
+
+</style>
+
+<body>
+    
+
+    
+        <select id="set" onclick="fonts()"> 
+        
+            <option value="1" >Oswald</option>
+            <option value="2" >Bitcount Grid</option>
+
+
+        </select>
+
+        <br><br>
+
+        <input type="text" id="size" placeholder="Enter Font Size with Unit" onchange="reSize()">
+
+        <br><br>
+        
+        <input type="checkbox" id="CB" onchange="Italic()">
+        <label for="CB">Italic</label>
+
+        <br><br>
+
+        <input type="checkbox" id="B" onchange="Bold()">
+        <label for="B">Bold</label>
+
+        <br><br>
+
+        <input type="checkbox" id="UL" onchange="Underline()">
+        <label for="UL">Underline</label>
+
+        <br><br>
+
+        <textarea name="" id="TA" cols="100" rows="20"></textarea>
+
+
+        <script >
+
+            function fonts(){
+            
+                var Drop = document.getElementById("set");
+                var Val = Drop.value
+                var para = document.getElementById("TA")
+
+                if(Val === "1"){
+                    para.style.fontFamily ="Oswald"
+                } 
+                else if(Val === "2"){
+                    para.style.fontFamily ="Bitcount Grid Double"
+                }
+            
+            }
+
+            fonts()
+
+            function reSize(){
+                const para = document.getElementById("TA");
+                const Size = document.getElementById("size").text;
+                alert(Size)
+                para.style.fontSize = Size;
+
+            }
+
+            function Italic(){
+                const para = document.getElementById("TA");
+                para.style.fontStyle = "italic";
+                }
+
+            function Bold(){
+                const para = document.getElementById("TA");
+                para.style.fontWeight = "bold";
+                }
+
+            function Underline(){
+                const para = document.getElementById("TA");
+                para.style.textDecoration = "underline";
+                }
+
+        </script>
+
+</body>
+
+</html>
