@@ -40,7 +40,7 @@ Create an array represents your:
 3- Favorite Movie (2)
 */
 
-var Food =[ "kapsh" , "ch3achel" ]
+var Food =[ "kapsah" , "ch3achel" ]
 var sport = [ "Fottball" , "Formula 1" , "Esports" ]
 var Movie = [ "Avengers:Endgame" , "Deadpool & Wolverine" ]
 
@@ -105,9 +105,23 @@ Sample Output : -4,-3,1,2,3,5,6,7,8
 
 var arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
 
-    arr1.sort((a,b)=>a-b)
-    
-    console.log(arr1)
+    for(i=0 ; i<(arr1.length-1) ; i++ ){
+
+        let swapped = false;
+
+        for( j=0 ; j<(arr1.length-1) ; j++ ){
+
+            if (arr1[j]>arr1[j+1]){
+                let empty = arr1[j]
+                arr1[j] = arr1[j+1]
+                arr1[j+1] = empty
+                swapped = true
+
+            }
+
+        }
+    }
+    document.writeln( " Sorted array = "+ "<br>" +  arr1  + "<br><br><br>")
 
 // 9.
 // Write a JavaScript function that returns rate as text
