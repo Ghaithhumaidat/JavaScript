@@ -15,6 +15,7 @@
 
     font-weight: bold;
     text-decoration: underline;
+    font-family: 
 
    }
 
@@ -24,11 +25,11 @@
     
 
     
-        <select id="set" onclick="fonts()"> 
+        <select id="set" onchange="changeFontStyle (this) "> 
         
-            <option value="1" >Oswald</option>
-            <option value="2" >Bitcount Grid</option>
-
+            <option value="Arial" >arial</option>
+            <option value="Michroma" >Michroma</option>
+            <option value="Libertinus Sans">Libertinus Sans</option>
 
         </select>
 
@@ -53,30 +54,20 @@
 
         <br><br>
 
-        <textarea name="" id="TA" cols="100" rows="20"></textarea>
+        <textarea name="" id="output-text" cols="100" rows="20"></textarea>
 
 
-        <script >
+        <script>
 
-            function fonts(){
-            
-                var Drop = document.getElementById("set");
-                var Val = Drop.value
-                var para = document.getElementById("TA")
-
-                if(Val === "1"){
-                    para.style.fontFamily ="Oswald"
-                } 
-                else if(Val === "2"){
-                    para.style.fontFamily ="Bitcount Grid Double"
-                }
-            
-            }
-
-            fonts()
+            var changeFontStyle = function (font) {
+            document.getElementById(
+                "output-text").style.fontFamily
+                        = font.value;
+        }
 
             function reSize(){
-                const para = document.getElementById("TA");
+
+                const para = document.getElementById("output-text");
                 const Size = document.getElementById("size").value;
                 alert(Size)
                 para.style.fontSize = Size;
@@ -84,21 +75,26 @@
             }
 
             function Italic(){
-                const para = document.getElementById("TA");
+
+                const para = document.getElementById("output-text");
                 const chick = document.getElementById("CB");
                 para.style.fontStyle = chick.checked ? "italic" : "normal" ;
                 }
 
             function Bold(){
-                const para = document.getElementById("TA");
+
+                const para = document.getElementById("output-text");
                 const chick = document.getElementById("B");
                 para.style.fontWeight = chick.checked ? "bold" : "normal" ;
+                
                 }
 
             function Underline(){
-                const para = document.getElementById("TA");
+                
+                const para = document.getElementById("output-text");
                 const chick = document.getElementById("UL");
                 para.style.textDecoration = chick.checked ? "underline" : "none" ;
+                
                 }
 
         </script>
