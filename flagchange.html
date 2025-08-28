@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> Counter Flags : </h1>
+    <select id="drop" onchange="changeflag(this)">
+
+        <option value="jordan">Jorden</option>
+        <option value="palestine">Palestine</option>
+        <option value="uae">UAE</option>
+        <option selected value="none">none</option>
+
+    </select>
+
+    <br>
+
+    <div id="flag" class="flag">
+        
+    </div>
+
+    <script>
+
+        const flag = document.getElementById("flag")
+
+        let changeflag = function (list){
+
+            if(list.value === "jordan"){
+                flag.innerHTML = ` <img src="https://www.edarabia.com/wp-content/uploads/2019/10/jordan-flag.jpg" alt="Jorden">  `
+            }
+            else if (list.value === "palestine"){
+                flag.innerHTML = ` <img src="https://cdn.freewebstore.com/origin/413338/1519143452884_palestinian-flag.jpg" alt="Palestine">  `
+            } else if (list.value === "uae"){
+                flag.innerHTML = ` <img src="https://www.edarabia.com/wp-content/uploads/2017/10/uae-flag-colours-meaning-history.jpg" alt="UAE">  `
+            }
+        }
+            
+
+    </script>
+</body>
+</html>
