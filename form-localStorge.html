@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+
+            width: 100%;
+            height: 100vh;
+
+        }
+
+        .form{
+
+            border: 5px solid black;
+            padding: 25px;
+
+        }
+
+        h1{
+            padding: 25px;
+        }
+
+        .card{
+            background-color: aquamarine;
+            width: 100%;
+            height: 50vh;
+            margin: 25px 0px;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <h1><strong>Display the form in one card using local Storage</strong></h1>
+
+    <div class="form">
+
+        <form onsubmit="sub(event)">
+
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" size="20">
+            <br>
+            <br>
+            <label for="age">Age: </label>
+            <input type="number" id="num" name="number" size="20" min="0">
+            <br>
+            <br>
+            <label for="gender">Gender: </label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <br>
+            <br>
+            <label for="BD">Birth Date: </label>
+            <input type="date" name="BD" id="BD">
+            <br>
+            <br>
+            <label for="file">Upload Your Image: </label>
+            <input type="file" id="file" name="file">
+            <br>
+            <br>
+            <hr>
+            <label for="des">Description: </label>
+            <input type="text" id="des" name="des">
+            <br>
+            <br>
+            <label for="mu">Majer & University: </label>
+            <input type="text" id="mu" name="mu">
+            <br>
+            <br>
+            <label for="pl">Programming Language: </label>
+            <input type="checkbox" id="HTML" name="pl" value="HTML">
+            <label for="HTML">HTML</label>
+            <input type="checkbox" name="pl" id="CSS" value="CSS">
+            <label for="CSS">CSS</label>
+            <input type="checkbox" id="JS" name="pl" value="JavaScript">
+            <label for="JS">JavaScript</label>
+            <br>
+            <br>
+            <hr>
+            <label for="sibnum">Siblings Number: </label>
+            <input type="text" name="sibnum" id="sibnum">
+            <br>
+            <br>
+            <label for="dessib">Description of Siblings: </label>
+            <input type="text" name="dessib" id="dessib">
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+    <div id="card" class="card">
+
+        <h1>Your Information</h1>
+
+    </div>
+
+
+    <script>
+
+        const card =document.getElementById("card")
+
+        function sub(event){
+            event.preventDefault();
+            const form = document.querySelector("form")
+            const formData = new FormData(form)
+            const dataObject = Object.fromEntries(formData.entries())
+            
+            
+            localStorage.setItem("formData" , JSON.stringify(dataObject))
+
+            displayCard();
+            
+        }
+           
+
+        function displayCard(){   
+            const saveData = JSON.parse(localStorage.getItem("formData"))
+                card.innerHTML = `
+                    <h2>Your Information</h2>
+                    <p><b>Name:</b> ${saveData.name}</p>
+                    <p><b>Age:</b> ${saveData.age}</p>
+                    <p><b>Gender:</b> ${saveData.gender}</p>
+                    <p><b>Birth Date:</b> ${saveData.BD}</p>
+                    <p><b>Description:</b> ${saveData.des}</p>
+                    <p><b>Major & University:</b> ${saveData.mu}</p>
+                    <p><b>Siblings Number:</b> ${saveData.sibnum}</p>
+                    <p><b>Description of Siblings:</b> ${saveData.dessib}</p>
+                `;
+        }
+
+        displayCard();
+    </script>
+</body>
+</html>
