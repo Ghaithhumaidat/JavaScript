@@ -1,0 +1,735 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 20px;
+    position: relative;
+}
+
+nav{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: rgb(240 248 255);
+    box-shadow: 0 0 7px 0;
+    z-index: 9999;
+
+}
+
+nav img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+nav .logo{
+    display: flex;
+    justify-content:space-evenly ;
+    align-items: center;
+    
+}
+
+nav ul{
+
+    list-style-type: none;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin-right: -40%;
+    justify-content: space-between;
+    
+}
+
+nav a{
+
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+nav a:hover{
+
+    color: coral;
+    transition: all 9s ease;
+
+} 
+
+nav li{
+
+    padding-right: 20px;
+    
+
+}
+
+.hum{
+
+    visibility: hidden;
+    position: relative;
+    height: 30px;
+    width: 39px;
+    top: 36%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.hum span{
+
+    display: block;
+    background-color: #444;
+    width: 27px;
+    height: 4px;
+    
+
+}
+
+
+.menu{
+
+    visibility: hidden;
+    background-color: #a9a9a9d5;
+    text-align: center;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 13vw;
+    justify-content: space-evenly;
+
+
+}
+
+.menu a{
+
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    height: calc(100% / 4);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.menu.active{
+    visibility: visible;
+    height: 60vh;
+    position: fixed;
+    width: 115vh;
+    left: 0vw;
+    z-index: 1000;
+}
+
+
+.main{
+
+    background-image:url("https://www.rammaheshwari.com/assets/svg/common-bg.svg");
+    height: 100vh;
+    width: 103%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* top: 15vh; */
+    left: -1vw;
+
+}
+
+.main .head{
+
+    text-align: center;
+    color: black;
+    font-size: 50px ;
+    font-weight: bold;
+
+}
+
+.main .para{
+
+    text-align: center;
+    font-size: 25px;
+    width: 85vw;
+
+}
+
+.btn1{
+
+    width: 15vw;
+    height: 8vh;
+    border: none;
+    border-radius: 5px;
+    background: rgb(120, 67, 233);
+    color: snow;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 42vw;
+
+}
+
+.btn1 a{
+
+    text-decoration: none;
+    color: azure;
+    text-transform: uppercase;
+
+}
+
+.media{
+
+    position: absolute;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 5vw;
+    height: 37vh;
+    left: 0vw;
+
+}
+
+.about{
+
+    position: relative;
+    /* top: 14vh; */
+    height: 95vh;
+    background-color: #5e5e5e;
+    width: 103%;
+    left: -1vw;
+    padding-top: 15vh;
+
+}
+
+.about .top{
+
+    text-align: center;
+    width: 100vw;
+
+}
+
+.top hr{
+
+    width: 25px;
+    height: 5px;
+    background-color: rgb(120, 67, 233);
+    border-radius: 15px;
+
+}
+
+.about .grided{
+
+    display: grid;
+    grid-template-areas: "type skill ";
+   grid-template-columns: 1fr 1fr;
+
+
+}
+
+.grided .text{
+
+    grid-area: type;
+    width: 47vw;
+    text-align: center;
+    margin-left: 10px;
+
+}
+
+.text .btn2{
+
+    width: 15vw;
+    height: 8vh;
+    border: none;
+    border-radius: 5px;
+    background: rgb(120, 67, 233);
+    color: snow;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 17vw;
+
+}
+
+.btn2 a{
+
+    text-decoration: none;
+    color: azure;
+    text-transform: uppercase;
+
+}
+
+.grided .skill{
+
+    grid-area: skill;
+    text-align: center;
+
+}
+
+.boxs{
+
+    color: #000;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 45vw;
+
+}
+
+
+
+.boxs .box{
+
+    border-radius: 5px;
+    background-color: grey;
+    width: 13vw;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+
+}
+
+.project{
+
+    position: relative;
+    /* top: 16vh; */
+    height: 133vh;
+    text-align: center;
+    width: 101%;
+    left: 1vw;
+    padding-top: 10vh;
+
+}
+
+.project hr{
+
+    width: 25px;
+    height: 5px;
+    background-color: rgb(120, 67, 233);
+    border-radius: 15px;
+
+}
+
+.project table{
+
+    width: 86%;
+
+}
+
+
+.project img{
+
+    width: 40vw;
+
+}
+
+.project .info{
+
+    grid-area: type;
+    text-align: center;
+
+}
+
+.project .btn3{
+
+    width: 15vw;
+    height: 8vh;
+    border: none;
+    border-radius: 5px;
+    background: rgb(120, 67, 233);
+    color: snow;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 6.5vw;
+
+}
+
+.btn3{
+
+    text-decoration: none;
+    color: azure;
+    text-transform: uppercase;
+
+}
+
+.contact{
+
+    background-image:  url("https://www.rammaheshwari.com/assets/svg/common-bg.svg");
+    backdrop-filter: opacity(0.2);
+    height: 110vh;
+    width: 103%;
+    position: relative;
+    left: -1vw;
+    top: 35vh;
+    text-align: center;
+    padding-top:15vh ;
+
+}
+
+.contact hr{
+
+    width: 25px;
+    height: 5px;
+    background-color: rgb(120, 67, 233);
+    border-radius: 15px;
+
+}
+
+.contact .btn3{
+
+    width: 15vw;
+    height: 8vh;
+    border: none;
+    border-radius: 5px;
+    background: rgb(120, 67, 233);
+    color: snow;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 20vw;
+    top: 3vh;
+
+}
+
+.contact .form{
+
+    background-color: #ffffff;
+    width: 53vw;
+    height: 62vh;
+    text-align: justify;
+    border-radius: 16px;
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    left: 20vw;
+    padding: 4%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    box-shadow: 5px 5px 5px 5px #0000004f;
+    margin: 35px 0;
+
+}
+
+.form .in{
+
+    height: 8vh;
+    border: none;
+    background: #eeeeee;
+    border-radius: 9px;
+
+}
+
+.in::placeholder{
+
+    color: #5e5e5eca;
+    font-weight: bold;
+
+}
+
+.form .area{
+
+    height: 30vh;
+    resize: none;
+    border: none;
+    background: #eeeeee;
+    border-radius: 9px;
+
+}
+
+.area::placeholder{
+
+    color: #5e5e5eca;
+    font-weight: bold;
+    padding: 15px;
+
+}
+
+footer{
+
+    width: 101vw;
+    height: 50vh;
+    background-color: #000;
+    color: #eeeeee;
+    position: relative;
+    top: 31vh;
+    left: -1vw;
+    display: grid;
+    grid-template-areas: "Text Social"
+                         "last last"   ;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+footer .text1{
+
+    grid-area: Text;
+    margin: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+footer .social{
+
+    grid-area: Social;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+footer .last{
+
+    grid-area: last;
+    text-align: center;
+
+}
+
+.last hr{
+
+    width: 80vw;
+
+}
+
+
+@media (max-width : 800px){
+
+    nav ul{
+        visibility: hidden;
+    }
+
+    .hum {
+        visibility: visible;
+    }
+
+    .about{
+
+        height: 100vh;
+
+    }
+
+    .project .btn3{
+        left: 14vw;
+        width: 23vw;
+    }
+
+    .contact .btn3 {
+    width: 20vw;
+    left: 17vw;
+    }
+    
+}
+
+@media (max-width : 700px ){
+
+    nav ul{
+        visibility: hidden;
+    }
+
+    .hum {
+        visibility: visible;
+    }
+
+    .menu{
+        top: 15vh;
+    }
+
+    .media{
+        visibility: hidden;
+    }
+
+    
+
+    .main .btn1{
+        width: 33vw;
+        right: 33vw;
+        top: 73vh;
+    }
+
+    .text .btn2{
+        left: 43vw;
+    }
+
+    .main .para{
+        width: 95vw;
+    }
+
+    .about{
+
+        height: 115vh;
+
+    }
+
+    .boxs{
+
+        width: 100vw;
+
+    }
+
+    .about .grided{
+
+        grid-template-areas: "type"
+                             "skill";
+        grid-template-rows: 2fr 1fr;
+        grid-template-columns: 1fr;
+
+    }
+
+    .grided .text{
+
+    grid-area: type;
+    width: 100vw;
+    text-align: center;
+
+    }
+
+
+    .boxs .box{
+
+        width: 30vw;
+
+    }
+
+    .project img {
+
+        width: 55vw;
+
+    }
+
+    .project .btn3{
+        left: 10.5vw;
+    }
+    
+}
+
+@media (max-width : 500px){
+
+    .main{
+
+        width: 105%;
+
+    }
+
+    .main .para{
+
+        width: 101vw;
+
+    }
+
+    .main .btn1{
+
+        right: 34vw;
+
+    }
+
+    .about{
+
+        height: 130vh;
+        width: 106%;
+        left: -2vw;
+
+    }
+
+    .about .top {
+
+        text-align: center;
+        width: 102vw;
+
+    }
+
+    .text .btn2 {
+
+        left: 38.5vw;
+        width: 25vw;
+
+    }
+
+    .grided .skill {
+        grid-area: skill;
+        text-align: center;
+        position: absolute;
+        bottom: 7vh;
+        right: 1vw;
+    }
+
+    .project .btn3 {
+        left: 8.5vw;
+        width: 24vw;
+    }
+
+    .contact .btn3 {
+        width: 25vw;
+        left: 14vw;
+        top: 1.5vh;
+        text-align: center;
+    }
+
+    footer{
+
+        width: 103vw;
+        height: 62vh;
+        left: -2vw;
+
+    }
+
+
+}
+
+@media (max-width : 410px) {
+
+    footer{
+
+        height: 70vh;
+
+    }
+
+    footer .social{
+
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+    } 
+    
+}
+
+@media (max-width : 375px){
+
+    .about {
+        height: 140vh;
+        width: 110%;
+        left: -3vw;
+    }
+
+
+}
