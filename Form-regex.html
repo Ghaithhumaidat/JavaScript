@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div div{
+
+            color: red;
+            width: 150px;
+            padding: 5px;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form">
+
+        <label for="fname1">Enter a Fname: </label>
+        <br>
+        <input type="text" name="fname1" id="first">
+        <div id="fname"></div>
+        <br>
+
+        <label for="lname1">Enter a Lname: </label>
+        <br>
+        <input type="text" name="lname1" id="last">
+        <div id="lname"></div>
+        <br>
+
+        <label for="bdate1">Enter a Bdate: </label>
+        <br>
+        <input type="text" name="bdate1" id="date">
+        <div id="bdate"></div>
+        <br>
+
+        <label for="email1">Enter an Email: </label>
+        <br>
+        <input type="text" name="email1" id="inemail">
+        <div id="email"></div>
+        <br>
+
+        <label for="cemail1">Confirm Email: </label>
+        <br>
+        <input type="text" name="cemail1" id="conem">
+        <div id="cemail"></div>
+        <br>
+
+        <label for="pass1">Password: </label>
+        <br>
+        <input type="text" name="pass1" id="word">
+        <p id="pass2">Should have lowercase letter, uppercase letter, number, special character and be at least 8 characters long</p>
+        <div id="pass"></div>
+        <br>
+
+        <label for="cpass1">Confirm password: </label>
+        <br>
+        <input type="text" name="cpass1" id="conpass">
+        <div id="cpass"></div>
+
+    </div>
+    
+    <script>
+        
+        let Fname = document.getElementById("first")
+        let Fout = document.getElementById("fname")
+        let Lname = document.getElementById("last")
+        let Lout = document.getElementById("lname")
+        let Bdate = document.getElementById("date")
+        let BDout = document.getElementById("bdate")
+        let Email = document.getElementById("inemail")
+        let Eout = document.getElementById("email")
+        let Cemail = document.getElementById("conem")
+        let CEout = document.getElementById("cemail")
+        let Pass = document.getElementById("word")
+        let Passo = document.getElementById("pass2")
+        let Pout = document.getElementById("pass")
+        let Cpass = document.getElementById("conpass")
+        let CPout = document.getElementById("cpass")
+
+        Fname.addEventListener("input",(e)=>{
+
+            e.defaultPrevented
+            let Fregex = /^.\D+$/g
+            Fregex.test(Fname.value) ? Fout.innerHTML="" : Fout.innerHTML = "Numbers aren't allow"
+
+        })
+        Lname.addEventListener("input",(e)=>{
+
+            e.defaultPrevented
+            let Lregex = /^.\D+$/g
+            Lregex.test(Lname.value) ? Lout.innerHTML="" : Lout.innerHTML = "Numbers aren't allow"
+
+        })
+        Bdate.addEventListener("input",(e)=>{
+
+            e.defaultPrevented
+            let Bregex =/^(0?[1-9]|[12][0-9]|3[01])\/(0?[1-9]|1[012])\/\d{4}$/ 
+            Bregex.test(Bdate.value) ? BDout.innerHTML ="" : BDout.innerHTML = "The format should be DD/MM/YYYY"
+
+        })
+        Email.addEventListener("input",(e)=>{
+
+            e.defaultPrevented
+            let Eregex =/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/
+            Eregex.test(Email.value) ? Eout.innerHTML="" : Eout.innerHTML = "The E-mail isn't valid"
+
+        })
+        Cemail.addEventListener("input",(e)=>{
+
+            e.defaultPrevented;
+            if(Cemail.value == Email.value) {CEout.innerHTML=""} 
+            else{CEout.innerHTML ="No match"} 
+
+        })
+        Pass.addEventListener("input",(e)=>{
+
+            e.defaultPrevented;
+            let Pregex = /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/
+            Pregex.test(Pass.value)? Pout.innerHTML="": Pout.innerHTML="weak password";
+
+        })
+        Cpass.addEventListener("input" , (e)=>{
+
+            e.defaultPrevented;
+            if(Cpass.value == Pass.value) {CPout.innerHTML=""} 
+            else {CPout.innerHTML ="No match"}
+
+        })
+
+    </script>
+
+</body>
+</html>
