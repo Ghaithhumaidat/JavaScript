@@ -146,7 +146,6 @@ nav li{
     justify-content: center;
     align-items: center;
     position: relative;
-    /* top: 15vh; */
     left: -1vw;
 
 }
@@ -210,7 +209,6 @@ nav li{
 .about{
 
     position: relative;
-    /* top: 14vh; */
     height: 95vh;
     background-color: #5e5e5e;
     width: 103%;
@@ -315,7 +313,6 @@ nav li{
 .project{
 
     position: relative;
-    /* top: 16vh; */
     height: 133vh;
     text-align: center;
     width: 101%;
@@ -381,7 +378,6 @@ nav li{
 .contact{
 
     background-image:  url("https://www.rammaheshwari.com/assets/svg/common-bg.svg");
-    backdrop-filter: opacity(0.2);
     height: 110vh;
     width: 103%;
     position: relative;
