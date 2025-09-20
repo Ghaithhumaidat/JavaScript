@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .flex{
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+        }
+        .flex div{
+
+            padding: 5px;
+            border: 5px solid brown;
+            border-radius: 10px;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>User Cards</h1>
+
+    <button id="btnapi">Load API Users</button>
+    <button id="btnjson">Load JSON Users</button>
+
+    <div class="flex" id="flex">
+ 
+
+
+    </div>
+
+    <script>
+
+        let display = document.getElementById("flex")
+        let API = document.getElementById("btnapi")
+        let JSON = document.getElementById("btnjson")
+
+        function clear(){
+            display.innerHTML = "";
+        }
+
+        JSON.addEventListener("click",()=>{
+
+            const user = "Users.json"
+            fetch(user)
+            .then(res => res.json())
+            .then(data =>{
+
+                clear();
+                data.forEach(element => {
+                    
+                    let play = document.createElement("div")
+                    play.innerHTML = `
+                    From JSON:<br>
+                    ${element.Name}<br>  
+                    Age:${element.Age}<br>  
+                    Email:${element.Email}<br>  
+                    Profession:${element.Profession}`
+                    display.appendChild(play)
+
+                });
+
+            })
+
+        })
+
+        API.addEventListener("click",async ()=>{
+
+            const User =await "https://68cc4dae716562cf50773284.mockapi.io/users/myWeb/Users"
+            await fetch(User)
+            .then(Response => Response.json())
+            .then(data =>{
+
+                clear();
+                data.forEach(element => {
+
+                    let Dos = document.createElement("div")
+                    Dos.innerHTML = `
+                    From API : <br>
+                    ${element.Name}<br>  
+                    Age:${element.Age}<br>  
+                    Email:${element.Email}<br>  
+                    Profession:${element.Profession}`
+                    display.appendChild(Dos)
+
+                })
+
+            })
+
+        })
+
+    </script>
+</body>
+</html>
